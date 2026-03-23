@@ -1,0 +1,63 @@
+---
+let isOpen = false;
+---
+
+<header class="absolute w-full z-50 text-white">
+
+  <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+
+    <h1 class="font-bold text-xl">loopstudios</h1>
+
+    <nav class="hidden md:flex gap-8 text-sm">
+      <a href="#" class="hover:underline">About</a>
+      <a href="#" class="hover:underline">Careers</a>
+      <a href="#" class="hover:underline">Events</a>
+      <a href="#" class="hover:underline">Products</a>
+      <a href="#" class="hover:underline">Support</a>
+    </nav>
+
+    <button id="menu-btn" class="md:hidden">
+      <img src="/images/icon-hamburger.svg" alt="menu" />
+    </button>
+
+  </div>
+
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 bg-black text-white hidden flex-col z-50">
+
+  <div class="flex justify-between items-center px-6 py-6">
+    <h1 class="font-bold text-xl">loopstudios</h1>
+
+    <button id="close-btn">
+      <img src="/images/icon-close.svg" alt="close" />
+    </button>
+  </div>
+
+  <nav class="flex flex-col justify-center h-full px-6 gap-6 text-2xl uppercase tracking-widest">
+    <a href="#" class="hover:opacity-70">About</a>
+    <a href="#" class="hover:opacity-70">Careers</a>
+    <a href="#" class="hover:opacity-70">Events</a>
+    <a href="#" class="hover:opacity-70">Products</a>
+    <a href="#" class="hover:opacity-70">Support</a>
+  </nav>
+
+</div>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const closeBtn = document.getElementById("close-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && closeBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("hidden");
+      mobileMenu.classList.add("flex");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+    });
+  }
+</script>
